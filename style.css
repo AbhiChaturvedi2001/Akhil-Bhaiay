@@ -20,6 +20,7 @@
     justify-content: center;
     align-items: center;
     height: 90vh;
+    display: none;
 }
 .login-container.login-active{
     display: none;
@@ -72,7 +73,7 @@ h2{
 .main-container{
     height: 100vh;
     width: 100%;
-    display: none;
+    display: block;
     position: absolute;
     top: 0%;
 }
@@ -166,7 +167,9 @@ nav h3{
     width: 100%;
     padding: 1rem;
 }
-
+.transaction-area h3{
+    font-family: var(--poppins-font);
+}
 .transaction-area input{
     display: block;
     width: 100%;
