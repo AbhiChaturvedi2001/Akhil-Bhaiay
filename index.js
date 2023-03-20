@@ -1,4 +1,5 @@
 // login page DOM selector
+
 const userName = document.getElementById("user-id");
 const userPassword = document.getElementById("user-password");
 const loginBtn = document.querySelector(".login-btn");
@@ -26,12 +27,23 @@ const transactionDate = document.getElementById("trans-date");
 const info = document.getElementById("info");
 const businessValue = document.getElementById("working-values");
 
+// ---------------------
+const bricksDashboard1 = document.querySelector(".bricks1");
+const bricksDashboard2 = document.querySelector(".bricks2");
+const bricksDashboard3 = document.querySelector(".bricks3");
+const bricksDashboard4 = document.querySelector(".bricks4");
+const bricksDashboard5 = document.querySelector(".bricks5");
+
+const bricks1container = document.querySelector('.bricks1-data');
+
+// login credentials  ----------------------
 const loginDetails = {
   name: "Akhil Lawania",
   userID: "akhil",
   password: "1234",
 };
 
+// -----------------------all data store in these storage array
 const bricks1 = [];
 const brick2 = [];
 const brick3 = [];
@@ -39,6 +51,8 @@ const brick4 = [];
 const brick5 = [];
 const personal = [];
 const employees = [];
+
+// ----------------------------------logic building
 
 const loginAccount = () => {
   if (userName.value === "" || userPassword.value === "") {
@@ -184,17 +198,18 @@ const add = () => {
 };
 
 const displayUi = (bricks1) => {
-   bricks1.map((x,y) => {
+  bricks1.map((x, y) => {
     const html = ` <div class="title-name">${x.title}</div>
     <div class="amt">${x.amount}</div>
     <div class="info">${x.info}</div>
     <div class="date">${x.date}</div>
     <div class="total-amount">${x.totalAmt}</div>
-    <div class="cateogr">${x.categories}</div>`
-    show.insertAdjacentHTML('afterbegin',html)
-   })
+    <div class="cateogr">${x.categories}</div>`;
+    show.insertAdjacentHTML("afterbegin", html);
+  });
 };
 
+// event listeneres all------------------------------------------------------
 loginBtn.addEventListener("click", loginAccount);
 forgotPassword.addEventListener("click", () => {
   alert(
